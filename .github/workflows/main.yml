@@ -18,15 +18,3 @@ jobs:
 
     - name: show current directory before checkout
       run: pwd
-
-    - name: Checkout
-      uses: actions/checkout@v4
-
-    - name: Inspect files after checkout
-      run: ls -la
-
-    - name: show current directory after checkout
-      run: pwd
-
-    - name: show all branches after checkout
-      run: git branch -a
