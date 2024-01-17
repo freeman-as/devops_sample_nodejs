@@ -40,3 +40,8 @@ jobs:
 
     - name: Inspect files after checkout
       run: ls -la
+
+    - run: |
+        echo "${{ secrets.GITHUB_TOKEN }}"
+        echo "${{ env.CURRENT_DATETIME }}"
+        echo "${{ env.RELEASE_FILENAME }}"
