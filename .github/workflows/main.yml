@@ -45,3 +45,15 @@ jobs:
         echo "${{ secrets.GITHUB_TOKEN }}"
         echo "${{ env.CURRENT_DATETIME }}"
         echo "${{ env.RELEASE_FILENAME }}"
+
+    - name: Create Release
+      id: create_release
+      uses: softprops/action-gh-release@v0.1.15
+      env:
+        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+      with:
+        tag_name: ${{ env.CURRENT_DATETIME }}
+        name: ${{ env.CURRENT_DATETIME }}
+        draft: false
+        prerelease: false
+        files: ${{ env.RELEASE_FILENAME }}
