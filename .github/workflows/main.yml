@@ -6,4 +6,9 @@ jobs:
   build:
     runs-on: ubuntu-latest
     steps:
-    - run: echo "Run workflow"
+    - name: SetTime
+      env:
+        TZ: 'Asia/Tokyo'
+      run: echo "CURRENT_DATETIME=$(date +'%Y%m%d-%H%M%S')" >> $GITHUB_ENV
+
+    - run: echo "RELEASE_FILENAME=release_${{ env.CURRENT_DATETIME }}.zip" >> $GITHUB_ENV
