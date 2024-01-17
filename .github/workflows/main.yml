@@ -1,8 +1,7 @@
 name: Create Archive
-on: 
- push:
-  branches:
-  - main
+on:
+  watch:
+    types: [started]
 
 jobs:
   build:
